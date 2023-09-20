@@ -1,10 +1,9 @@
-from app import app
-from models import db, Bird
+from app import app, db  # Import the already initialized db instance
+from models import Bird
 
-db.init_app(app)
+# No need for db.init_app(app) here
 
 with app.app_context():
-
     print('Deleting existing birds...')
     Bird.query.delete()
 
